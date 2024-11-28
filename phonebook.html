@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phonebook</title>
+    <style>
+        body{
+            background-color: rgb(226, 243, 242);
+        }
+        .head {
+            text-align: center;
+            font-size: 30px;
+            font-family: sans-serif;
+            color: rgb(250, 172, 56);
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: rgb(200, 238, 33);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(157, 250, 8);
+        }
+        input[type="text"] {
+            height: 40px;
+            font-size: 18px;
+            padding: 5px 10px;
+            border: 2px solid rgb(48, 130, 252);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>Phonebook...📞</h1>
+        <input type="text" id="search" placeholder="Search by any Alphabet">
+        <button type="button" onclick="search()">Search</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        const contacts = {
+            a: "9822467751 💕",
+            b: "7218197665 ✌",
+            c: "9822467765 ✔",
+            d: "5982467751 🎉",
+            e: "8675984613 💖",
+            f: "5975946123 🌹",
+            g: "5646546870 ❤",
+            h: "7218197665 ✌",
+            i: "9822467765 ✔",
+            j: "5982467751 🎉",
+            k: "8675984613 💖",
+            l: "5975946123 🌹",
+            m: "5646546870 ❤",
+            n: "7218197665 ✌",
+            o: "9822467765 ✔",
+            p: "5982467751 🎉",
+            q: "8675984613 💖",
+            r: "5975946123 🌹",
+            s: "5646546870 ❤",
+            t: "7218197665 ✌",
+            u: "9822467765 ✔",
+            v: "5982467751 🎉",
+            w: "8675984613 💖",
+            x: "5975946123 🌹",
+            y: "5646546870 ❤",
+            z: "9822467751 💕"
+        }
+        function search() {
+            const searchInput = document.getElementById("search");
+            const query = searchInput.value.toLowerCase();
+
+            const mobile = contacts[query]
+            const result = document.getElementById("result");
+
+            if (mobile) {
+                result.innerHTML = `Mobile number of   ${query}  is <b>${mobile}</b>.`;
+            }
+            else { result.innerText = `Contact Not Found ...❌🚫` };
+
+        }
+    </script>
+</body>
+
+</html>
